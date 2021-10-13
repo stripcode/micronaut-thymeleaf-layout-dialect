@@ -1,0 +1,17 @@
+Thumbs.db
+.DS_Store
+.gradle
+target/
+out/
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+.factorypath
+
+# Project exclude paths
+/build/
+/build/classes/java/main/

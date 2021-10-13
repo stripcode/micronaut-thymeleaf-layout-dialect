@@ -1,0 +1,44 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "2.0.6"
+}
+
+version = "0.1"
+group = "com.nkrsv.micronautthymeleaflayoutdialect"
+
+repositories {
+    mavenCentral()
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.nkrsv.micronautthymeleaflayoutdialect.*")
+    }
+}
+
+dependencies {
+    annotationProcessor("io.micronaut:micronaut-http-validation")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut.views:micronaut-views-thymeleaf")
+    implementation("javax.annotation:javax.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.0.0")
+
+}
+
+
+application {
+    mainClass.set("com.nkrsv.micronautthymeleaflayoutdialect.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+
+
